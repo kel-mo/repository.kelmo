@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build zips/ (add-on zips, addons.xml, addons.xml.md5, index.html) for GitHub Pages.
+"""Build zips/ (add-on zips, addons.xml, sha256 files, index.html) for GitHub Pages.
 
 Usage: ./generate.py [ADDON_SOURCE_DIR | ADDON_ZIP ...]
 The in-repo repository.kelmo/ is always included. Add-ons already in zips/ stay listed.
@@ -102,6 +102,20 @@ def write_if_changed(path, data):
         f.write(data)
 
 
+def write_sha256(path, data):
+    """sha256sum format; Kodi reads the first token."""
+    line = '{}  {}\n'.format(hashlib.sha256(data).hexdigest(), os.path.basename(path))
+    write_if_changed(path + '.sha256', line.encode())
+
+
+def hash_zips():
+    for base, _dirs, files in os.walk(OUT):
+        for name in files:
+            if name.endswith('.zip'):
+                with open(os.path.join(base, name), 'rb') as f:
+                    write_sha256(os.path.join(base, name), f.read())
+
+
 def newest_zips():
     """Newest zip per add-on id present under zips/."""
     best = {}
@@ -174,7 +188,8 @@ def main():
     xml = ('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n<addons>\n' + body + '</addons>\n').encode('utf-8')
     ET.fromstring(xml)
     write_if_changed(os.path.join(OUT, 'addons.xml'), xml)
-    write_if_changed(os.path.join(OUT, 'addons.xml.md5'), (hashlib.md5(xml).hexdigest() + '\n').encode())
+    write_sha256(os.path.join(OUT, 'addons.xml'), xml)
+    hash_zips()
     write_indexes(newest.get('repository.kelmo'))
     for aid, path in newest.items():
         print('{} -> {}'.format(aid, os.path.basename(path)))

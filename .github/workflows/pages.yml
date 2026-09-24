@@ -27,14 +27,16 @@ jobs:
         run: |
           python3 - <<'PY'
           import hashlib, os, sys, xml.etree.ElementTree as ET
-          data = open('zips/addons.xml', 'rb').read()
-          want = open('zips/addons.xml.md5').read().split()[0]
-          if hashlib.md5(data).hexdigest() != want:
-              sys.exit('addons.xml.md5 does not match addons.xml')
-          for a in ET.fromstring(data).findall('addon'):
+          def check(path):
+              want = open(path + '.sha256').read().split()[0]
+              if hashlib.sha256(open(path, 'rb').read()).hexdigest() != want:
+                  sys.exit(path + '.sha256 does not match')
+          check('zips/addons.xml')
+          for a in ET.fromstring(open('zips/addons.xml', 'rb').read()).findall('addon'):
               z = 'zips/{0}/{0}-{1}.zip'.format(a.get('id'), a.get('version'))
               if not os.path.isfile(z):
                   sys.exit('missing ' + z)
+              check(z)
           print('ok')
           PY
 

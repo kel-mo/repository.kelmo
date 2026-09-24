@@ -29,16 +29,16 @@ v0.1.0: initial release - pairing, browsing, download and launch</news>
     </assets>
   </extension>
 </addon>
-<addon id="repository.kelmo" name="kel-mo Add-on Repository" version="1.0.0" provider-name="kel-mo">
+<addon id="repository.kelmo" name="kel-mo Add-on Repository" version="1.0.1" provider-name="kel-mo">
   <requires>
     <import addon="xbmc.addon" version="12.0.0"/>
   </requires>
   <extension point="xbmc.addon.repository">
     <dir minversion="19.0.0">
       <info>https://kel-mo.github.io/repository.kelmo/addons.xml</info>
-      <checksum>https://kel-mo.github.io/repository.kelmo/addons.xml.md5</checksum>
+      <checksum verify="sha256">https://kel-mo.github.io/repository.kelmo/addons.xml.sha256</checksum>
       <datadir>https://kel-mo.github.io/repository.kelmo/</datadir>
-      <hashes>false</hashes>
+      <hashes>sha256</hashes>
     </dir>
   </extension>
   <extension point="xbmc.addon.metadata">

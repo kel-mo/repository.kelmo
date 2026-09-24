@@ -9,9 +9,9 @@ Only built zips live here. Add-on sources stay in their own (private) repositori
 
 - `repository.kelmo/` – source of the repository add-on itself
 - `generate.py` – builds `zips/` from add-on source dirs or prebuilt zips
-- `zips/` – what GitHub Pages serves: `addons.xml`, `addons.xml.md5`,
-  `<id>/<id>-<version>.zip`, add-on icons and `index.html` link pages
-- `.github/workflows/pages.yml` – checks `addons.xml.md5` and publishes `zips/` on push to `main`
+- `zips/` – what GitHub Pages serves: `addons.xml`, `addons.xml.sha256`,
+  `<id>/<id>-<version>.zip` with a `.sha256` each, add-on icons and `index.html` link pages
+- `.github/workflows/pages.yml` – checks the sha256 files and publishes `zips/` on push to `main`
 
 ## Releasing an add-on
 
@@ -29,7 +29,7 @@ To change the repository add-on, edit `repository.kelmo/addon.xml`, bump its ver
 ## Installing (users)
 
 1. In Kodi, enable *Settings → System → Add-ons → Unknown sources*.
-2. Download `repository.kelmo-1.0.0.zip` from <https://kel-mo.github.io/repository.kelmo/>
+2. Download the `repository.kelmo-<version>.zip` linked at the top of <https://kel-mo.github.io/repository.kelmo/>
    (or add that URL as a file source in Kodi's file manager and browse to `repository.kelmo/`).
 3. *Add-ons → Install from zip file* and pick the zip.
 4. *Install from repository → kel-mo Add-on Repository* and install RomM.
