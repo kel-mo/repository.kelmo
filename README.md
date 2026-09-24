@@ -38,3 +38,7 @@ To change the repository add-on, edit `repository.kelmo/addon.xml`, bump its ver
 
 - Make the repository public (GitHub Pages on the free plan needs a public repository).
 - *Settings → Pages → Build and deployment → Source: GitHub Actions*.
+
+## License
+
+GPL-2.0-or-later, see `LICENSE`. Add-ons served from `zips/` carry their own licences.
