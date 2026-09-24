@@ -1,0 +1,48 @@
+name: Publish repository to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify addons.xml and zips
+        run: |
+          python3 - <<'PY'
+          import hashlib, os, sys, xml.etree.ElementTree as ET
+          data = open('zips/addons.xml', 'rb').read()
+          want = open('zips/addons.xml.md5').read().split()[0]
+          if hashlib.md5(data).hexdigest() != want:
+              sys.exit('addons.xml.md5 does not match addons.xml')
+          for a in ET.fromstring(data).findall('addon'):
+              z = 'zips/{0}/{0}-{1}.zip'.format(a.get('id'), a.get('version'))
+              if not os.path.isfile(z):
+                  sys.exit('missing ' + z)
+          print('ok')
+          PY
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: zips
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
