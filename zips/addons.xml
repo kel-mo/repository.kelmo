@@ -47,9 +47,6 @@ v0.1.0: initial release - pairing, browsing, download and launch</news>
     <platform>all</platform>
     <license>GPL-2.0-or-later</license>
     <source>https://github.com/kel-mo/repository.kelmo</source>
-    <assets>
-      <icon>icon.png</icon>
-    </assets>
   </extension>
 </addon>
 </addons>
