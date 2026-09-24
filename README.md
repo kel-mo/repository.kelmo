@@ -32,7 +32,8 @@ To change the repository add-on, edit `repository.kelmo/addon.xml`, bump its ver
 2. Download the `repository.kelmo-<version>.zip` linked at the top of <https://kel-mo.github.io/repository.kelmo/>
    (or add that URL as a file source in Kodi's file manager and browse to `repository.kelmo/`).
 3. *Add-ons → Install from zip file* and pick the zip.
-4. *Install from repository → kel-mo Add-on Repository* and install RomM.
+4. *Install from repository → kel-mo Add-on Repository → Game add-ons → Game providers → RomM → Install*.
+   Kodi fetches its dependency (`script.module.pyqrcode`) from the official repository.
 
 ## One-time GitHub setup
 
