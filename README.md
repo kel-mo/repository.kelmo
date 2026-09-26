@@ -1,6 +1,6 @@
 # repository.kelmo
 
-Kodi add-on repository for kel-mo's add-ons (e.g. RomM), served from GitHub Pages at
+Kodi add-on repository for kel-mo's add-ons (RomM and Immich), served from GitHub Pages at
 <https://kel-mo.github.io/repository.kelmo/>.
 
 Only built zips live here. Add-on sources stay in their own (private) repositories.
@@ -32,8 +32,10 @@ To change the repository add-on, edit `repository.kelmo/addon.xml`, bump its ver
 2. Download the `repository.kelmo-<version>.zip` linked at the top of <https://kel-mo.github.io/repository.kelmo/>
    (or add that URL as a file source in Kodi's file manager and browse to `repository.kelmo/`).
 3. *Add-ons → Install from zip file* and pick the zip.
-4. *Install from repository → kel-mo Add-on Repository → Game add-ons → Game providers → RomM → Install*.
-   Kodi fetches its dependency (`script.module.pyqrcode`) from the official repository.
+4. *Install from repository → kel-mo Add-on Repository*, then:
+   - RomM: *Game add-ons → Game providers → RomM → Install*. Kodi fetches its dependency
+     (`script.module.pyqrcode`) from the official repository.
+   - Immich: *Picture add-ons → Immich → Install*.
 
 ## One-time GitHub setup
 
