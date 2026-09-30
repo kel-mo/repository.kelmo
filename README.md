@@ -3,8 +3,6 @@
 Kodi add-on repository for kel-mo's add-ons (RomM and Immich), served from GitHub Pages at
 <https://kel-mo.github.io/repository.kelmo/>.
 
-Only built zips live here. Add-on sources stay in their own (private) repositories.
-
 ## Layout
 
 - `repository.kelmo/` – source of the repository add-on itself
