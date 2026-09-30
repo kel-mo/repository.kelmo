@@ -34,6 +34,16 @@ def version_key(v):
     return [int(n) for n in re.findall(r'\d+', base)], 0 if tag else 1, tag
 
 
+def drop_export_ignore(src, paths):
+    """Drop what git archive would: export-ignore on the file or any parent dir."""
+    parts = {p: ['/'.join(p.split('/')[:i + 1]) for i in range(p.count('/') + 1)] for p in paths}
+    names = sorted({n for ns in parts.values() for n in ns})
+    out = subprocess.check_output(['git', 'check-attr', '-z', '--stdin', 'export-ignore'], cwd=src,
+                                  input=''.join(n + '\0' for n in names).encode()).decode().split('\0')
+    skip = {p for p, v in zip(out[0::3], out[2::3]) if v == 'set'}
+    return [p for p in paths if skip.isdisjoint(parts[p])]
+
+
 def source_files(src):
     """git ls-files when src is a checkout root, else a directory walk."""
     try:
@@ -41,7 +51,7 @@ def source_files(src):
                                       stderr=subprocess.DEVNULL).decode().strip()
         if os.path.samefile(top, src):
             out = subprocess.check_output(['git', 'ls-files', '-z'], cwd=src)
-            found = [p for p in out.decode().split('\0') if p]
+            found = drop_export_ignore(src, [p for p in out.decode().split('\0') if p])
         else:
             found = None
     except (OSError, subprocess.CalledProcessError):

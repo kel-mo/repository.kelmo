@@ -15,7 +15,8 @@ Kodi add-on repository for kel-mo's add-ons (RomM and Immich), served from GitHu
 
 1. Bump the version (and `<news>`) in the add-on's `addon.xml` and commit it there.
 2. `./generate.py ../plugin.program.romm` (source dir or a prebuilt zip; several allowed).
-   Source checkouts ship only `git ls-files`, minus `build.py`, `README.md`, `.gitignore`, `tests/`, etc.
+   Source checkouts ship only `git ls-files`, minus `export-ignore` paths and `build.py`, `README.md`,
+   `.gitignore`, `tests/`, etc.
 3. `git add zips && git commit && git push`
 4. The Pages workflow publishes the site. Kodi picks up the update on its next repository check.
 
