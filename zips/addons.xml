@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="plugin.image.immich" name="Immich" version="0.2.5" provider-name="kel-mo">
+<addon id="plugin.image.immich" name="Immich" version="0.2.6" provider-name="kel-mo">
   <requires>
     <import addon="xbmc.python" version="3.0.1"/>
   </requires>
@@ -8,6 +8,7 @@
     <provides>image</provides>
   </extension>
   <extension point="xbmc.service" library="service.py"/>
+  <extension point="xbmc.ui.screensaver" library="screensaver.py"/>
   <extension point="xbmc.addon.metadata">
     <summary lang="en_GB">View your Immich photos and videos in Kodi</summary>
     <description lang="en_GB">Browse the timeline, On this day, people and pets, places, albums and favourites of a self-hosted Immich server, or search by description. Watch them as a slideshow that crossfades and slowly pans and zooms across each photo, with photo details at the press of Info. View only: nothing is changed on the server.</description>
@@ -16,7 +17,9 @@
     <license>GPL-2.0-or-later</license>
     <source>https://github.com/kel-mo/plugin.image.immich</source>
     <website>https://immich.app</website>
-    <news>v0.2.5
+    <news>v0.2.6
+- A Ken Burns screensaver: On this day, random, favourites or a smart search
+v0.2.5
 - Photos glide between screen pixels on Kodi builds that support it, edges included
 - Photos shown again load at full resolution, not from Kodi 22's smaller cached copy
 v0.2.4
@@ -38,10 +41,7 @@ v0.2.1
 v0.2.0
 - The API key no longer shows up in Kodi's debug log or image cache
 - Pause and resume videos in the slideshow
-- Date, place and count share one row under each photo
-v0.1.1
-- Pan and zoom runs at its proper speed on skins such as Confluence ZEITGEIST
-v0.1.0: initial release - timeline, On this day, people, places, albums, favourites, search, and a pan and zoom slideshow</news>
+- Date, place and count share one row under each photo</news>
     <assets>
       <icon>resources/icon.png</icon>
     </assets>
