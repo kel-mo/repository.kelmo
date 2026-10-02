@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="plugin.image.immich" name="Immich" version="0.3.5" provider-name="kel-mo">
+<addon id="plugin.image.immich" name="Immich" version="0.3.6" provider-name="kel-mo">
   <requires>
     <import addon="xbmc.python" version="3.0.1"/>
   </requires>
@@ -17,7 +17,9 @@
     <license>GPL-2.0-or-later</license>
     <source>https://github.com/kel-mo/plugin.image.immich</source>
     <website>https://immich.app</website>
-    <news>v0.3.5
+    <news>v0.3.6
+- Favourites that showed a tile go back to the Immich icon by themselves, keeping their place
+v0.3.5
 - Tiles stay on the menu: Immich favourites no longer get one, so pick a thumbnail again for any that did
 - Kodi quits promptly even with a photo or tile request under way
 v0.3.4
@@ -48,7 +50,7 @@ v0.2.6
     </assets>
   </extension>
 </addon>
-<addon id="plugin.program.romm" name="RomM" version="0.2.9" provider-name="kel-mo">
+<addon id="plugin.program.romm" name="RomM" version="0.2.10" provider-name="kel-mo">
   <requires>
     <import addon="xbmc.python" version="3.0.1"/>
     <import addon="script.module.pyqrcode" version="1.2.1"/>
@@ -65,7 +67,9 @@ v0.2.6
     <license>GPL-2.0-or-later</license>
     <source>https://github.com/kel-mo/plugin.program.romm</source>
     <website>https://romm.app</website>
-    <news>v0.2.9
+    <news>v0.2.10
+- Favourites that showed a tile go back to the RomM icon by themselves, keeping their place
+v0.2.9
 - Tiles stay on the menu: RomM favourites no longer get one, so pick a thumbnail again for any that did
 - Kodi quits promptly even with a request under way
 v0.2.8
