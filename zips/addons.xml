@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="plugin.image.immich" name="Immich" version="0.3.4" provider-name="kel-mo">
+<addon id="plugin.image.immich" name="Immich" version="0.3.5" provider-name="kel-mo">
   <requires>
     <import addon="xbmc.python" version="3.0.1"/>
   </requires>
@@ -17,7 +17,10 @@
     <license>GPL-2.0-or-later</license>
     <source>https://github.com/kel-mo/plugin.image.immich</source>
     <website>https://immich.app</website>
-    <news>v0.3.4
+    <news>v0.3.5
+- Tiles stay on the menu: Immich favourites no longer get one, so pick a thumbnail again for any that did
+- Kodi quits promptly even with a photo or tile request under way
+v0.3.4
 - Kodi no longer waits long on a slow server when it quits while tiles are drawn
 v0.3.3
 - Long tile names wrap onto two lines, so every name stays larger
@@ -39,16 +42,13 @@ v0.2.8
 v0.2.7
 - The screensaver hides the photo count and moves its captions and clock a little, against OLED burn-in
 v0.2.6
-- A Ken Burns screensaver: On this day, random, favourites or a smart search
-v0.2.5
-- Photos glide between screen pixels on Kodi builds that support it, edges included
-- Photos shown again load at full resolution, not from Kodi 22's smaller cached copy</news>
+- A Ken Burns screensaver: On this day, random, favourites or a smart search</news>
     <assets>
       <icon>resources/icon.png</icon>
     </assets>
   </extension>
 </addon>
-<addon id="plugin.program.romm" name="RomM" version="0.2.8" provider-name="kel-mo">
+<addon id="plugin.program.romm" name="RomM" version="0.2.9" provider-name="kel-mo">
   <requires>
     <import addon="xbmc.python" version="3.0.1"/>
     <import addon="script.module.pyqrcode" version="1.2.1"/>
@@ -65,7 +65,10 @@ v0.2.5
     <license>GPL-2.0-or-later</license>
     <source>https://github.com/kel-mo/plugin.program.romm</source>
     <website>https://romm.app</website>
-    <news>v0.2.8
+    <news>v0.2.9
+- Tiles stay on the menu: RomM favourites no longer get one, so pick a thumbnail again for any that did
+- Kodi quits promptly even with a request under way
+v0.2.8
 - The shadow behind two-line tile names sits on both lines
 v0.2.7
 - Bigger tile names; long ones wrap onto two lines
@@ -90,13 +93,7 @@ v0.2.2
 - PlayStation 2 games play with the LRPS2 core
 - Clearer message when the add-on has no emulator for a platform
 v0.2.1
-- New add-on icon
-v0.2.0
-- Continue playing, backlog, and browsing by genre, region and play status
-- Favourite, backlog, play status and hide games from the context menu (pair again to allow favourites)
-- Sort order setting, screenshots, other versions of a game, richer game details
-- Save sync, play time and activity reporting through a background service
-- Fix: release years were wrong</news>
+- New add-on icon</news>
     <assets>
       <icon>resources/icon.png</icon>
     </assets>
