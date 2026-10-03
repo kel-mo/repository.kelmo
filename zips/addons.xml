@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-<addon id="plugin.image.immich" name="Immich" version="0.3.9" provider-name="kel-mo">
+<addon id="plugin.image.immich" name="Immich" version="0.3.10" provider-name="kel-mo">
   <requires>
     <import addon="xbmc.python" version="3.0.1"/>
   </requires>
@@ -17,7 +17,10 @@
     <license>GPL-2.0-or-later</license>
     <source>https://github.com/kel-mo/plugin.image.immich</source>
     <website>https://immich.app</website>
-    <news>v0.3.9
+    <news>v0.3.10
+- A thinner outline behind the slideshow caption, date and clock
+- Kodi quits promptly even with a photo on its way through the proxy
+v0.3.9
 - Folder backgrounds show the whole photo, on a blurred copy of itself, instead of a crop
 v0.3.8
 - Years and months in Timeline, and countries in Places, show one of their photos
@@ -49,7 +52,7 @@ v0.2.9
     </assets>
   </extension>
 </addon>
-<addon id="plugin.program.romm" name="RomM" version="0.3.1" provider-name="kel-mo">
+<addon id="plugin.program.romm" name="RomM" version="0.3.2" provider-name="kel-mo">
   <requires>
     <import addon="xbmc.python" version="3.0.1"/>
     <import addon="script.module.pyqrcode" version="1.2.1"/>
@@ -66,7 +69,9 @@ v0.2.9
     <license>GPL-2.0-or-later</license>
     <source>https://github.com/kel-mo/plugin.program.romm</source>
     <website>https://romm.app</website>
-    <news>v0.3.1
+    <news>v0.3.2
+- Game lists open at once; their backgrounds are made in the background and appear within moments
+v0.3.1
 - Game backgrounds get a CRT look, with scanlines and plain as choices (Screenshot look, under Library)
 - A whole page's backgrounds are made at once, and console screenshots are shown 4:3 as on a TV
 v0.3.0
