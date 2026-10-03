@@ -1,6 +1,6 @@
 # repository.kelmo
 
-Kodi add-on repository for kel-mo's add-ons (RomM, Immich and a fork of Kai Sommerfeld's Home Assistant
+Kodi add-on repository for kel-mo's add-ons (RomM, Immich, Frigate and a fork of Kai Sommerfeld's Home Assistant
 Dashboard), served from GitHub Pages at
 <https://kel-mo.github.io/repository.kelmo/>.
 
@@ -36,6 +36,7 @@ To change the repository add-on, edit `repository.kelmo/addon.xml`, bump its ver
    - RomM: *Game add-ons → Game providers → RomM → Install*. Kodi fetches its dependency
      (`script.module.pyqrcode`) from the official repository.
    - Immich: *Picture add-ons → Immich → Install*.
+   - Frigate: *Video add-ons → Frigate → Install*.
    - Home Assistant Dashboard: *Program add-ons → Home Assistant Dashboard → Install*. It keeps
      upstream's id, `script.homeassistant`, so an installed copy updates to this fork.
 
