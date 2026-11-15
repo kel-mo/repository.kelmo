@@ -44,7 +44,7 @@ v0.3.15
     </assets>
   </extension>
 </addon>
-<addon id="plugin.program.romm" name="RomM" version="0.3.8" provider-name="kel-mo">
+<addon id="plugin.program.romm" name="RomM" version="0.3.9" provider-name="kel-mo">
   <requires>
     <import addon="xbmc.python" version="3.1.1"/>
     <import addon="script.module.pyqrcode" version="1.2.1"/>
@@ -61,7 +61,9 @@ v0.3.15
     <license>GPL-2.0-or-later</license>
     <source>https://github.com/kel-mo/plugin.program.romm</source>
     <website>https://romm.app</website>
-    <news>v0.3.8
+    <news>v0.3.9
+- In-game saves lost on this device come back from RomM, and saves from Kodi 22.0rc1 move to the new folder
+v0.3.8
 - Needs Kodi 22.0rc2 or newer: in-game saves sync again from Kodi's new save folder
 - PS1 games start in Beetle PSX HW first, PSP games in PPSSPP, Dreamcast, Naomi and Atomiswave games in Flycast
 - LibreELEC emulators for ColecoVision, Intellivision, Channel F, Neo Geo CD, CD-i, X68000, PC-88, BK and Amstrad CPC
