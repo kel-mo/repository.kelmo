@@ -44,9 +44,9 @@ v0.3.15
     </assets>
   </extension>
 </addon>
-<addon id="plugin.program.romm" name="RomM" version="0.3.7" provider-name="kel-mo">
+<addon id="plugin.program.romm" name="RomM" version="0.3.8" provider-name="kel-mo">
   <requires>
-    <import addon="xbmc.python" version="3.1.0"/>
+    <import addon="xbmc.python" version="3.1.1"/>
     <import addon="script.module.pyqrcode" version="1.2.1"/>
   </requires>
   <extension point="xbmc.python.pluginsource" library="default.py">
@@ -61,7 +61,13 @@ v0.3.15
     <license>GPL-2.0-or-later</license>
     <source>https://github.com/kel-mo/plugin.program.romm</source>
     <website>https://romm.app</website>
-    <news>v0.3.7
+    <news>v0.3.8
+- Needs Kodi 22.0rc2 or newer: in-game saves sync again from Kodi's new save folder
+- PS1 games start in Beetle PSX HW first, PSP games in PPSSPP, Dreamcast, Naomi and Atomiswave games in Flycast
+- LibreELEC emulators for ColecoVision, Intellivision, Channel F, Neo Geo CD, CD-i, X68000, PC-88, BK and Amstrad CPC
+- BIOS files go to game.libretro's shared system folder when it is turned on
+- Multi-disc games get a playlist only when the emulator reads one
+v0.3.7
 - PS3 games start in RPCS3
 v0.3.6
 - Saturn and PS2 games packed as .7z (with vfs.libarchive) or as a zipped disc image start
